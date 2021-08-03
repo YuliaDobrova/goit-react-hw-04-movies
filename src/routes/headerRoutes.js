@@ -1,8 +1,5 @@
-import HomePage from "../pages/HomePage";
-import MoviesPage from "../pages/MoviesPage";
-
 const headerRoutes = [
-  { name: "home", path: "/", exact: true, component: HomePage },
-  { name: "movies", path: "/movies", exact: true, component: MoviesPage },
+  { name: "home", path: "/", exact: true },
+  { name: "movies", path: "/movies", exact: true },
 ];
 export default headerRoutes;

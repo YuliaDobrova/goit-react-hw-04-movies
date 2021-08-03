@@ -30,19 +30,3 @@ const mainRoutes = [
 ];
 
 export default mainRoutes;
-
-// import HomePage from "../pages/HomePage";
-// import MovieDetailsPage from "../pages/MovieDetailsPage";
-// import MoviesPage from "../pages/MoviesPage";
-
-// const HomePage = lazy(() =>
-//   import("../pages/HomePage.js" /*webpackChunkName: "HomePage" */)
-// );
-// const MovieDetailsPage = lazy(() =>
-//   import(
-//     "../pages/MovieDetailsPage.js" /*webpackChunkName: "MovieDetailsPage" */
-//   )
-// );
-// const MoviesPage = lazy(() =>
-//   import("../pages/MoviesPage" /*webpackChunkName: "MoviesPage" */)
-// );

@@ -8,17 +8,13 @@ export const MovieDetailsStyled = styled.div`
     }
   }
   .MovieDetailsImage {
-    margin-right: 20px;
+    /* margin-right: 20px; */
 
     display: block;
-    width: 500px;
-    height: 650px;
+    width: 300px;
+    height: 450px;
     border: 3px solid teal;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-radius: 10px;
   }
   .MovieDetailsWrapper {
     border-radius: 10px;

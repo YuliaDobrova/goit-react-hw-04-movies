@@ -1,9 +1,12 @@
-import React, { Component } from "react";
+import React, { Component, lazy } from "react";
 import { Link, Route, Switch } from "react-router-dom";
 import { MovieDetailsStyled } from "../pagesStyles/MovieDetailsStyled";
 import { fetchMovieDetails } from "../services/Api";
-import Cast from "./CastPage";
-import Review from "./ReviewPage";
+// import Cast from "../components/CastPage";
+// import Review from "../components/ReviewPage";
+
+const Cast = lazy(() => import("../components/CastPage"));
+const Review = lazy(() => import("../components/ReviewPage"));
 
 class MovieDetailsPage extends Component {
   state = {
@@ -28,10 +31,7 @@ class MovieDetailsPage extends Component {
       });
   }
 
-  handleGoBack = () => {
-    const { location, history } = this.props;
-    history.push(location?.state?.from || this.props.movies);
-  };
+  handleGoBack = () => this.props.history.push(this.state.from);
 
   render() {
     const { title, release_date, poster_path, vote_average, genres } =
@@ -48,8 +48,6 @@ class MovieDetailsPage extends Component {
               <img
                 src={"https://image.tmdb.org/t/p/w300" + poster_path}
                 alt={title}
-                // width="300"
-                // height="400"
                 className="MovieDetailsImage"
               />
             )}
@@ -64,40 +62,31 @@ class MovieDetailsPage extends Component {
                     {genre.name}
                   </li>
                 ))}
-              </ul>
+              </ul>{" "}
+              <div className="MovieDetailsButtonWrapper">
+                <Link
+                  to={this.props.match.url + "/cast"}
+                  className="MovieDetailsLink"
+                >
+                  Cast
+                </Link>
+                <Link
+                  to={this.props.match.url + "/review"}
+                  className="MovieDetailsLink"
+                >
+                  Review
+                </Link>
+              </div>
             </div>
           </div>
         </MovieDetailsStyled>
-        <div className="MovieDetailsButtonWrapper">
-          <Link
-            to={this.props.match.url + "/cast"}
-            className="MovieDetailsLink"
-          >
-            <button
-              type="button"
-              className="button MovieDetailsButton"
-              // onClick={}
-            >
-              Cast
-            </button>
-          </Link>
-          <Link
-            to={this.props.match.url + "/review"}
-            className="MovieDetailsLink"
-          >
-            <button
-              type="button"
-              className="button MovieDetailsButton"
-              // onClick={}
-            >
-              Review
-            </button>
-          </Link>
+
+        <div>
+          <Switch>
+            <Route path="/movies/:id/cast" exact component={Cast} />
+            <Route path="/movies/:id/review" exact component={Review} />
+          </Switch>
         </div>
-        <Switch>
-          <Route path="/movies/:id/cast" exact component={Cast} />
-          <Route path="/movies/:id/review" exact component={Review} />
-        </Switch>
       </>
     );
   }

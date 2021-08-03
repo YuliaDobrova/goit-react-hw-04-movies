@@ -23,16 +23,16 @@ class ReviewPage extends Component {
     return (
       <>
         {reviews.length ? (
-          <ul>
+          <ul className="ReviewList">
             {reviews.map((review) => (
-              <li key={review.id}>
-                <h3>{review.author}</h3>
-                <p>{review.content}</p>
+              <li className="ReviewItem" key={review.id}>
+                <h3 className="ReviewTitle">{review.author}</h3>
+                <p className="ReviewText">{review.content}</p>
               </li>
             ))}
           </ul>
         ) : (
-          <h2>No Review to this movie</h2>
+          <h2 className="ReviewTitle">No Review to this movie</h2>
         )}
       </>
     );
