@@ -2,8 +2,6 @@ import React, { Component, lazy } from 'react';
 import { Link, Route, Switch } from 'react-router-dom';
 import { MovieDetailsStyled } from '../pagesStyles/MovieDetailsStyled';
 import { fetchMovieDetails } from '../services/Api';
-// import Cast from "../components/CastPage";
-// import Review from "../components/ReviewPage";
 
 const Cast = lazy(() => import('../pages/CastPage'));
 const Review = lazy(() => import('../pages/ReviewPage'));

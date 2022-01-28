@@ -2,8 +2,6 @@ import styled from 'styled-components';
 
 export const MovieDetailsStyled = styled.div`
   .MovieDetailsThumb {
-    /* margin-left: auto;
-    margin-right: auto; */
     padding: 20px;
     @media screen and (min-width: 768px) {
       display: flex;
@@ -28,7 +26,6 @@ export const MovieDetailsStyled = styled.div`
     }
     @media screen and (min-width: 1280px) {
       margin-right: 50px;
-      /* margin-left: 200px; */
     }
   }
   .MovieDetailsWrapper {

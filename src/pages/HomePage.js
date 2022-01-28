@@ -29,6 +29,8 @@ const HomePage = () => {
 
 export default HomePage;
 
+// HOW IT LOOKED BEFORE CHANGE FROM CLASS TO HOOKS
+
 // import React, { Component } from 'react';
 // import { fetchTrendingMovies } from '../services/Api';
 
