@@ -1,31 +1,31 @@
-import React, { Component, lazy } from "react";
-import { Link, Route, Switch } from "react-router-dom";
-import { MovieDetailsStyled } from "../pagesStyles/MovieDetailsStyled";
-import { fetchMovieDetails } from "../services/Api";
+import React, { Component, lazy } from 'react';
+import { Link, Route, Switch } from 'react-router-dom';
+import { MovieDetailsStyled } from '../pagesStyles/MovieDetailsStyled';
+import { fetchMovieDetails } from '../services/Api';
 // import Cast from "../components/CastPage";
 // import Review from "../components/ReviewPage";
 
-const Cast = lazy(() => import("../components/CastPage"));
-const Review = lazy(() => import("../components/ReviewPage"));
+const Cast = lazy(() => import('../pages/CastPage'));
+const Review = lazy(() => import('../pages/ReviewPage'));
 
 class MovieDetailsPage extends Component {
   state = {
     moviesDetails: {},
     isLoading: false,
-    from: "",
+    from: '',
   };
 
   async componentDidMount() {
     this.setState({ isLoading: true });
     const movieId = this.props.match.params.id;
     await fetchMovieDetails(movieId)
-      .then((res) =>
+      .then(res =>
         this.setState({
           moviesDetails: res,
           from: this.props.location.state?.from,
-        })
+        }),
       )
-      .catch((error) => console.log(error))
+      .catch(error => console.log(error))
       .finally(() => {
         this.setState({ isLoading: false });
       });
@@ -34,8 +34,7 @@ class MovieDetailsPage extends Component {
   handleGoBack = () => this.props.history.push(this.state.from);
 
   render() {
-    const { title, release_date, poster_path, vote_average, genres } =
-      this.state.moviesDetails;
+    const { title, release_date, poster_path, vote_average, genres } = this.state.moviesDetails;
 
     return (
       <>
@@ -46,7 +45,7 @@ class MovieDetailsPage extends Component {
           <div className="MovieDetailsThumb">
             {poster_path && (
               <img
-                src={"https://image.tmdb.org/t/p/w300" + poster_path}
+                src={'https://image.tmdb.org/t/p/w300' + poster_path}
                 alt={title}
                 className="MovieDetailsImage"
               />
@@ -57,23 +56,17 @@ class MovieDetailsPage extends Component {
               <p className="MovieDetailsText">Vote average: {vote_average}</p>
               <p className="MovieDetailsText">Genres: </p>
               <ul className="MovieDetailsList">
-                {genres?.map((genre) => (
+                {genres?.map(genre => (
                   <li className="MovieDetailsListItem" key={genre.id}>
                     {genre.name}
                   </li>
                 ))}
-              </ul>{" "}
+              </ul>{' '}
               <div className="MovieDetailsButtonWrapper">
-                <Link
-                  to={this.props.match.url + "/cast"}
-                  className="MovieDetailsLink"
-                >
+                <Link to={this.props.match.url + '/cast'} className="MovieDetailsLink">
                   Cast
                 </Link>
-                <Link
-                  to={this.props.match.url + "/review"}
-                  className="MovieDetailsLink"
-                >
+                <Link to={this.props.match.url + '/review'} className="MovieDetailsLink">
                   Review
                 </Link>
               </div>

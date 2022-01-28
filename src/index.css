@@ -1,5 +1,5 @@
 body {
-  background-image: url("../src/images/bg.jpg");
+  background-image: url('../src/images/bg.jpg');
   /* background-repeat: no-repeat; */
   /* background-size: cover; */
   color: lightgrey;
@@ -123,8 +123,7 @@ NavLink--active:hover {
   font-style: normal;
   font-weight: 500;
   min-width: 180px;
-  box-shadow: 0px 3px 2px -3px rgba(255, 255, 255, 0.7),
-    0px 0px 3px 3px rgba(255, 255, 255, 0.7),
+  box-shadow: 0px 3px 2px -3px rgba(255, 255, 255, 0.7), 0px 0px 3px 3px rgba(255, 255, 255, 0.7),
     0px 1px 3px 0px rgba(255, 255, 255, 0.7);
 }
 
@@ -151,8 +150,7 @@ NavLink--active:hover {
   font-style: normal;
   font-weight: 500;
   /* min-width: 180px; */
-  box-shadow: 0px 3px 2px -3px rgba(255, 255, 255, 0.7),
-    0px 0px 3px 3px rgba(255, 255, 255, 0.7),
+  box-shadow: 0px 3px 2px -3px rgba(255, 255, 255, 0.7), 0px 0px 3px 3px rgba(255, 255, 255, 0.7),
     0px 1px 3px 0px rgba(255, 255, 255, 0.7);
 }
 
@@ -265,8 +263,7 @@ footer:hover {
   font-style: normal;
   font-weight: 500;
   min-width: 180px;
-  box-shadow: 0px 3px 2px -3px rgba(255, 255, 255, 0.7),
-    0px 0px 3px 3px rgba(255, 255, 255, 0.7),
+  box-shadow: 0px 3px 2px -3px rgba(255, 255, 255, 0.7), 0px 0px 3px 3px rgba(255, 255, 255, 0.7),
     0px 1px 3px 0px rgba(255, 255, 255, 0.7);
   display: block;
 }
@@ -276,19 +273,6 @@ footer:hover {
   font-size: 19px;
   font-weight: 600;
   color: black;
-}
-
-.CastList {
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  margin-top: -10px;
-  margin-left: -10px;
-}
-
-.CastListItem {
-  margin-top: 10px;
-  margin-left: 10px;
 }
 
 .ReviewItem {

@@ -1,20 +1,35 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const MovieDetailsStyled = styled.div`
   .MovieDetailsThumb {
+    /* margin-left: auto;
+    margin-right: auto; */
     padding: 20px;
     @media screen and (min-width: 768px) {
       display: flex;
+      justify-content: center;
+    }
+    @media screen and (min-width: 1280px) {
+      display: flex;
+      justify-content: center;
     }
   }
   .MovieDetailsImage {
-    /* margin-right: 20px; */
-
+    margin-right: auto;
+    margin-left: auto;
     display: block;
     width: 300px;
     height: 450px;
     border: 3px solid teal;
     border-radius: 10px;
+    @media screen and (min-width: 768px) {
+      margin-right: 20px;
+      margin-left: 0px;
+    }
+    @media screen and (min-width: 1280px) {
+      margin-right: 50px;
+      /* margin-left: 200px; */
+    }
   }
   .MovieDetailsWrapper {
     border-radius: 10px;
@@ -45,7 +60,7 @@ export const MovieDetailsStyled = styled.div`
   .MovieDetailsList,
   .MovieDetailsListItem {
     color: white;
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 700;
     margin-left: 20px;
     margin-bottom: 30px;
@@ -55,7 +70,7 @@ export const MovieDetailsStyled = styled.div`
     margin-bottom: 30px;
   }
   .MovieDetailsListItem {
-    font-size: 28px;
+    font-size: 22px;
     font-weight: 700;
     margin-left: 20px;
     margin-bottom: 30px;

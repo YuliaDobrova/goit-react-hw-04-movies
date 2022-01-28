@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const PageStyled = styled.div`
   .HomePageTitle {
@@ -59,8 +59,8 @@ export const PageStyled = styled.div`
       margin-bottom: 30px;
     }
     @media screen and (min-width: 1280px) {
-      margin-top: -30px;
-      margin-left: -30px;
+      margin-top: -20px;
+      margin-left: -20px;
       flex-direction: row;
       justify-content: center;
     }
@@ -100,8 +100,8 @@ export const PageStyled = styled.div`
       }
     }
     @media screen and (min-width: 1280px) {
-      width: 335px;
-      height: 480px;
+      min-width: 300px;
+      height: 450px;
       margin-top: 30px;
       margin-left: 30px;
       flex-basis: calc((100% / 5) - 30px);
@@ -120,7 +120,7 @@ export const PageStyled = styled.div`
 
     transition: all 0.2s ease-in-out;
     &:hover {
-      transform: scale(0.95);
+      transform: scale(0.98);
     }
     @media screen and (min-width: 768px) {
       width: 220px;
@@ -128,8 +128,8 @@ export const PageStyled = styled.div`
     }
 
     @media screen and (min-width: 1280px) {
-      width: 300px;
-      height: 400px;
+      width: 100%;
+      height: 350px;
     }
   }
 
@@ -141,6 +141,10 @@ export const PageStyled = styled.div`
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     border-bottom: 0;
+    @media screen and (min-width: 1280px) {
+      width: 280px;
+      /* height: 350px; */
+    }
   }
 
   .PageItemWrapperOverlay {
@@ -177,7 +181,7 @@ export const PageStyled = styled.div`
   .PageItemName {
     text-align: center;
     hyphens: auto;
-    width: 290px;
+    width: 100%;
     height: 50px;
     background-color: black;
     border: 2px solid teal;
@@ -197,7 +201,7 @@ export const PageStyled = styled.div`
       width: 220px;
     }
     @media screen and (min-width: 1280px) {
-      width: 300px;
+      width: 280px;
     }
   }
 `;
